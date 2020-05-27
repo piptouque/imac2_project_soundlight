@@ -41,30 +41,18 @@ function bandToColour(band, namesToColourAmps, fac) {
   return colour;
 }
 
-function mergeBandColours(colours) {
-  const colour = colours.reduce(
-     (acc, colour) => {
-       for(var i=0; i<colour.length; ++i)
-       {
-         acc[i] += colour[i] * 10;// / colours.length;
-       }
-       return acc;
-     }, [0, 0, 0])
-  return colour;
-}
-
 function drawSpotlights(colours) {
   buffers.forEach(
     (buffer, index) => {
       buffer.background(...colours[index]);
-      image(buffer, 200 * index, 0); 
+      image(buffer, 100 * index, 0); 
     });
 }
   
 
 function setup() {
-  createCanvas(1000, 200);
-  buffers = names.map(name => createGraphics(200, 200));
+  createCanvas(500, 400);
+  buffers = names.map(name => createGraphics(100, 400));
   
 
   filt = new p5.HighPass();
@@ -90,10 +78,10 @@ function draw() {
   
   let spectrum = fft.analyze();
   const bands = getBandAmps(fft);
-  console.log(bands.map(band => band.name + " :" + band.amp));
+  // console.log(bands.map(band => band.name + " :" + band.amp));
   const colours = bandsToColour(bands);
   drawSpotlights(colours);
 }
 
   
-  
+   
