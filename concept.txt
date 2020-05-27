@@ -1,0 +1,6 @@
+
+SoundLight, a synopsis:
+Sets of coloured spotlights and a microphone are set up at regular intervals on either side of a corridor.
+Sound, or music, made by passersby is received by the microphone, and processed to detect pitch of as many notes (see frequencies) as there are lights.
+The sound frequencies are converted to light wavelengths and displayed with the coloured spotlights.
+This conversion and the spacing of the spotlights can be altered for different results.
